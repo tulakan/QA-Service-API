@@ -4,7 +4,6 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/restdemo');
-const UserModel = require('./models/user');
 
 server.connection({port: 7000});
 
@@ -21,7 +20,17 @@ server.register({
     }
 });
 
+server.register([
+    require('./routes/user')
+    ], (err) => {
+    if (err) {
+        throw err;
+    }
+});
+
+
 // =============== Routes for our API =======================
+/*
 server.route({
     method: 'GET',      // Methods Type
     path: '/api/getUser',  // Url
@@ -240,6 +249,7 @@ server.route({
 
     }
 });
+*/
 // =============== Start our Server =======================
 // Lets start the server
 server.start(function () {
