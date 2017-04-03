@@ -6,6 +6,4 @@ const UserSchema = new Schema({
     age: Number
 });
 
-module.exports = mongoose.model('User', UserSchema, 'User');/**
- * Created by Kanrawee Karaboot on 4/2/2017.
- */
+module.exports = mongoose.model('User', UserSchema, 'User');

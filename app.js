@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/restdemo');
 const UserModel = require('./models/user');
 
-server.connection({port: 7002});
+server.connection({port: 7000});
 
 server.register({
     register: require('hapi-swagger'),
