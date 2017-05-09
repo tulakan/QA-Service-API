@@ -1,12 +1,15 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
-const Joi = require('joi');
+// const Joi = require('joi');
 const mongoose = require('mongoose');
+const corsHeaders = require('hapi-cors-headers');
 
-mongoose.connect('mongodb://localhost:27017/restdemo');
+// mongoose.connect('mongodb://localhost:27017/QandA-DB');
+mongoose.connect('mongodb://tulakan:Kan56050206@ds133321.mlab.com:33321/q-and-a-system');
 
-server.connection({port: 7000});
-
+const port = process.env.PORT || 7000;
+server.connection({port: port});
+server.ext('onPreResponse', corsHeaders);
 server.register({
     register: require('hapi-swagger'),
     options: {
@@ -21,7 +24,8 @@ server.register({
 });
 
 server.register([
-    require('./routes/user')
+    require('./routes/user'),
+    require('./routes/quiz')
     ], (err) => {
     if (err) {
         throw err;
