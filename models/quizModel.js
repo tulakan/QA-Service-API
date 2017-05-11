@@ -8,7 +8,16 @@ const quizSchema = new Schema({
         choice2 : String,
         choice3 : String,
         choice4 : String,
+
     },
+    correctChoice : String,
+    learningGroup : String,
+    classLevel : String,
+    quizType : String,
+    difficulty : String,
+    time : String,
+    timeUnit : String,
+    tag : Array,
 });
 
 module.exports = mongoose.model('quiz', quizSchema, 'quiz');

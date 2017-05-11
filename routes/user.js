@@ -81,6 +81,49 @@ exports.register = function(server, options, next) {
     });
 
     server.route({
+        method: 'GET',
+        path: '/user/getUserbyDeviceID/{deviceID}',
+        config: {
+            // Include this API in swagger documentation
+            tags: ['api'],
+            description: 'Get User Data by DeviceID',
+            notes: 'Get User Data by DeviceID',
+            validate: {
+                // Id is required field
+                params: {
+                    deviceID: Joi.string().required()
+                }
+            }
+        },
+        handler: function (request, reply) {
+            //Fetch all data from mongodb User Collection
+            UserModel.find({'equipmentNo': {'$regex': request.params.deviceID}}, function (error, data) {
+                if (error) {
+                    reply({
+                        statusCode: 503,
+                        message: 'Failed to get data',
+                        data: error
+                    });
+                } else {
+                    if (data.length === 0) {
+                        reply({
+                            statusCode: 200,
+                            message: 'User Not Found',
+                            data: data
+                        });
+                    } else {
+                        reply({
+                            statusCode: 200,
+                            message: 'User Data Successfully Fetched',
+                            data: data
+                        });
+                    }
+                }
+            });
+        }
+    });
+
+    server.route({
         method: 'POST',
         path: '/user/addUser',
         config: {

@@ -25,7 +25,9 @@ server.register({
 
 server.register([
     require('./routes/user'),
-    require('./routes/quiz')
+    require('./routes/quiz'),
+    require('./routes/playlist'),
+    require('./routes/answer')
     ], (err) => {
     if (err) {
         throw err;
