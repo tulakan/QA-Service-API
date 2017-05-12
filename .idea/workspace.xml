@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="03d71c42-8299-490c-ba3d-b1ac223046ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/quiz.js" afterPath="$PROJECT_DIR$/routes/quiz.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="5434">
@@ -66,19 +67,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quiz.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="quiz.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/quiz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1364">
-              <caret line="276" column="17" lean-forward="true" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
+            <state relative-caret-position="264">
+              <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding>
                 <element signature="e#256#683#0" expanded="false" />
-                <element signature="e#1746#2634#0" expanded="false" />
-                <element signature="e#2676#4099#0" expanded="false" />
-                <element signature="e#4135#6121#0" expanded="false" />
-                <element signature="e#6171#7713#0" expanded="false" />
-                <element signature="e#7752#8856#0" expanded="false" />
-                <element signature="e#8895#11136#0" expanded="false" />
+                <element signature="e#1651#2539#0" expanded="false" />
+                <element signature="e#2581#4004#0" expanded="false" />
+                <element signature="e#4040#6026#0" expanded="false" />
+                <element signature="e#6076#7618#0" expanded="false" />
+                <element signature="e#7657#8761#0" expanded="false" />
+                <element signature="e#8800#11041#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -171,8 +172,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/answerModel.js" />
         <option value="$PROJECT_DIR$/routes/user.js" />
-        <option value="$PROJECT_DIR$/routes/quiz.js" />
         <option value="$PROJECT_DIR$/routes/answer.js" />
+        <option value="$PROJECT_DIR$/routes/quiz.js" />
       </list>
     </option>
   </component>
@@ -369,7 +370,7 @@
       <workItem from="1494408307258" duration="25912000" />
       <workItem from="1494478860787" duration="597000" />
       <workItem from="1494481044885" duration="12786000" />
-      <workItem from="1494554984709" duration="745000" />
+      <workItem from="1494554984709" duration="1176000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1491162176743</created>
@@ -427,22 +428,29 @@
       <option name="project" value="LOCAL" />
       <updated>1494555021105</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add route">
+      <created>1494558688762</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1494558688762</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73425000" />
+    <option name="totallyTimeSpent" value="73856000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17824934" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -799,22 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/quiz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1364">
-          <caret line="276" column="17" lean-forward="true" selection-start-line="276" selection-start-column="17" selection-end-line="276" selection-end-column="17" />
-          <folding>
-            <element signature="e#256#683#0" expanded="false" />
-            <element signature="e#1746#2634#0" expanded="false" />
-            <element signature="e#2676#4099#0" expanded="false" />
-            <element signature="e#4135#6121#0" expanded="false" />
-            <element signature="e#6171#7713#0" expanded="false" />
-            <element signature="e#7752#8856#0" expanded="false" />
-            <element signature="e#8895#11136#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -842,6 +834,22 @@
         <state relative-caret-position="5434">
           <caret line="247" column="20" lean-forward="false" selection-start-line="247" selection-start-column="20" selection-end-line="247" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/quiz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding>
+            <element signature="e#256#683#0" expanded="false" />
+            <element signature="e#1651#2539#0" expanded="false" />
+            <element signature="e#2581#4004#0" expanded="false" />
+            <element signature="e#4040#6026#0" expanded="false" />
+            <element signature="e#6076#7618#0" expanded="false" />
+            <element signature="e#7657#8761#0" expanded="false" />
+            <element signature="e#8800#11041#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

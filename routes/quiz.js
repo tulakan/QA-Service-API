@@ -48,11 +48,6 @@ exports.register = function(server, options, next) {
                 } else {
                     reply({
                         statusCode: 200,
-
-                    });
-
-                    reply({
-                        statusCode: 200,
                         message: 'User Data Successfully Fetched',
                         data: data
                     });
