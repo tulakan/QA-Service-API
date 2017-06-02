@@ -9,7 +9,7 @@ mongoose.connect('mongodb://tulakan:Kan56050206@ds133321.mlab.com:33321/q-and-a-
 
 const port = process.env.PORT || 7000; // process.env.PORT is port when deploy to heroku
 
-server.connection({port: port});
+server.connection({ port: port });
 server.ext('onPreResponse', corsHeaders); // add corsHeader on pre-response
 
 server.register({
@@ -17,7 +17,7 @@ server.register({
     options: {
         apiVersion: "0.0.1"
     }
-}, function (err) {
+}, function(err) {
     if (err) {
         server.log(['error'], 'hapi-swagger load error: ' + err)
     } else {
@@ -25,12 +25,12 @@ server.register({
     }
 });
 
-server.register([ // add route
+server.register([ // add route to app.js
     require('./routes/user'),
     require('./routes/quiz'),
     require('./routes/playlist'),
     require('./routes/answer')
-    ], (err) => {
+], (err) => {
     if (err) {
         throw err;
     }
@@ -260,6 +260,6 @@ server.route({
 */
 // =============== Start our Server =======================
 // Lets start the server
-server.start(function () { //start  running server
+server.start(function() { //start  running server
     console.log('Server running at:', server.info.uri);
 });
