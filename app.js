@@ -4,14 +4,16 @@ const server = new Hapi.Server();
 const mongoose = require('mongoose');
 const corsHeaders = require('hapi-cors-headers');
 
-// mongoose.connect('mongodb://localhost:27017/QandA-DB');
-mongoose.connect('mongodb://tulakan:Kan56050206@ds133321.mlab.com:33321/q-and-a-system');
+// mongoose.connect('mongodb://localhost:27017/QandA-DB'); // connect to locol mongoDB
+mongoose.connect('mongodb://tulakan:Kan56050206@ds133321.mlab.com:33321/q-and-a-system'); // connect to mLab mongoDB
 
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 7000; // process.env.PORT is port when deploy to heroku
+
 server.connection({port: port});
-server.ext('onPreResponse', corsHeaders);
+server.ext('onPreResponse', corsHeaders); // add corsHeader on pre-response
+
 server.register({
-    register: require('hapi-swagger'),
+    register: require('hapi-swagger'), //add swagger
     options: {
         apiVersion: "0.0.1"
     }
@@ -23,7 +25,7 @@ server.register({
     }
 });
 
-server.register([
+server.register([ // add route
     require('./routes/user'),
     require('./routes/quiz'),
     require('./routes/playlist'),
@@ -258,6 +260,6 @@ server.route({
 */
 // =============== Start our Server =======================
 // Lets start the server
-server.start(function () {
+server.start(function () { //start  running server
     console.log('Server running at:', server.info.uri);
 });

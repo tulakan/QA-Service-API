@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PlaylistSchema = new Schema({
+const PlaylistSchema = new Schema({ // new schema
     playlistName : String,
     playlistLearningGroup : String,
     classLevel : String,

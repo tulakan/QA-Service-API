@@ -134,6 +134,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //spare
     //search quiz by keyword
     // server.route({
     //     method: 'GET',

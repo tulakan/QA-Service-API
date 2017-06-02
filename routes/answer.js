@@ -7,9 +7,6 @@ const mongoose = require('mongoose');
 exports.register = function(server, options, next) {
 
     const answerModel = require('../models/answerModel');
-    // const userModel = require('../models/user');
-    // const quizModel = require('../models/quizModel');
-
 
     // list all playlist
     server.route({

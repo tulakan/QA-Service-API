@@ -8,23 +8,23 @@ exports.register = function(server, options, next) {
 
     const quizModel = require('../models/quizModel');
     //test
-    server.route({
-        method: 'GET',
-        path: '/quiz/test',
-        config: {
-            // Include this API in swagger documentation
-            tags: ['api'],
-            description: 'test',
-            notes: 'test'
-        },
-        handler: function (request, reply) {
-            reply({
-                status : true,
-                statusCode: 200,
-                message: 'Quiz API Works'
-            });
-        }
-    });
+    // server.route({
+    //     method: 'GET',
+    //     path: '/quiz/test',
+    //     config: {
+    //         // Include this API in swagger documentation
+    //         tags: ['api'],
+    //         description: 'test',
+    //         notes: 'test'
+    //     },
+    //     handler: function (request, reply) {
+    //         reply({
+    //             status : true,
+    //             statusCode: 200,
+    //             message: 'Quiz API Works'
+    //         });
+    //     }
+    // });
 
     // list quiz for esd
     server.route({
@@ -57,34 +57,34 @@ exports.register = function(server, options, next) {
     });
 
     // list quiz
-    server.route({
-        method: 'GET',
-        path: '/quiz/listQuiz',
-        config: {
-            // Include this API in swagger documentation
-            tags: ['api'],
-            description: 'List All Quiz',
-            notes: 'List All Quiz'
-        },
-        handler: function (request, reply) {
-            //Fetch all data from mongodb User Collection
-            quizModel.find({}, function (error, data) {
-                if (error) {
-                    reply({
-                        statusCode: 503,
-                        message: 'Failed to get data',
-                        data: error
-                    });
-                } else {
-                    reply({
-                        statusCode: 200,
-                        message: 'User Data Successfully Fetched',
-                        data: data
-                    });
-                }
-            });
-        }
-    });
+    // server.route({
+    //     method: 'GET',
+    //     path: '/quiz/listQuiz',
+    //     config: {
+    //         // Include this API in swagger documentation
+    //         tags: ['api'],
+    //         description: 'List All Quiz',
+    //         notes: 'List All Quiz'
+    //     },
+    //     handler: function (request, reply) {
+    //         //Fetch all data from mongodb User Collection
+    //         quizModel.find({}, function (error, data) {
+    //             if (error) {
+    //                 reply({
+    //                     statusCode: 503,
+    //                     message: 'Failed to get data',
+    //                     data: error
+    //                 });
+    //             } else {
+    //                 reply({
+    //                     statusCode: 200,
+    //                     message: 'User Data Successfully Fetched',
+    //                     data: data
+    //                 });
+    //             }
+    //         });
+    //     }
+    // });
 
     //get quiz by ID
     server.route({

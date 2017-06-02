@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const quizSchema = new Schema({
+const quizSchema = new Schema({ // new schema
     question: String,
     choice :{
         choice1 : String,

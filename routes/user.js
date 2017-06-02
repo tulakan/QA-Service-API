@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 exports.register = function(server, options, next) {
 
     const UserModel = require('../models/user');
-    // Fetching all users data
+    // get all users data
     server.route({
         method: 'GET',
         path: '/user/listUser',
@@ -37,6 +37,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //get user by username
     server.route({
         method: 'GET',
         path: '/user/getUserbyUsername/{username}',
@@ -53,7 +54,7 @@ exports.register = function(server, options, next) {
             }
         },
         handler: function (request, reply) {
-            //Fetch all data from mongodb User Collection
+            //find username in user collection
             UserModel.find({'username': {'$regex': request.params.username}}, function (error, data) {
                 if (error) {
                     reply({
@@ -80,6 +81,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //get User by Device ID
     server.route({
         method: 'GET',
         path: '/user/getUserbyDeviceID/{deviceID}',
@@ -96,7 +98,7 @@ exports.register = function(server, options, next) {
             }
         },
         handler: function (request, reply) {
-            //Fetch all data from mongodb User Collection
+            //search for equipmentNo in user collection
             UserModel.find({'equipmentNo': {'$regex': request.params.deviceID}}, function (error, data) {
                 if (error) {
                     reply({
@@ -123,6 +125,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //add user
     server.route({
         method: 'POST',
         path: '/user/addUser',
@@ -131,7 +134,7 @@ exports.register = function(server, options, next) {
             tags: ['api'],
             description: 'Save user data',
             notes: 'Save user data',
-            // We use Joi plugin to validate request
+            //use Joi plugin to validate request
             validate: {
                 payload: {
                     name: Joi.string().required(),
@@ -176,6 +179,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //updata user
     server.route({
         method: 'PUT',
         path: '/user/updateUser/{username}',
@@ -223,6 +227,7 @@ exports.register = function(server, options, next) {
         }
     });
 
+    //delete user
     server.route({
         method: 'DELETE',
         path: '/user/deleteUser/{username}',
