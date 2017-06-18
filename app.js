@@ -17,7 +17,7 @@ server.register({
     options: {
         apiVersion: "0.0.1"
     }
-}, function(err) {
+}, function (err) {
     if (err) {
         server.log(['error'], 'hapi-swagger load error: ' + err)
     } else {
@@ -29,12 +29,57 @@ server.register([ // add route to app.js
     require('./routes/user'),
     require('./routes/quiz'),
     require('./routes/playlist'),
-    require('./routes/answer')
+    require('./routes/answer'),
+    // require('inert')
 ], (err) => {
     if (err) {
         throw err;
     }
+
+    server.route({
+        method: 'GET',
+        path: '/index',
+        handler: {
+            file: './public/QandA-System/dist/index.html'
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/{path*}',
+        handler: {
+            directory: {
+                path: './public/QandA-System/dist'
+            }
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/assets/{path*}',
+        handler: {
+            directory: {
+                path: './public/QandA-System/dist/assets/'
+            }
+        }
+    });
+
+    server.route({
+        method: 'GET',
+        path: '/vendors/{path*}',
+        handler: {
+            directory: {
+                path: './public/QandA-System/dist/vendors/'
+            }
+        }
+    });
+
+    server.start(function () { //start  running server
+        console.log('Server running at:', server.info.uri);
+    });
+
 });
+
 
 
 // =============== Routes for our API =======================
@@ -260,6 +305,3 @@ server.route({
 */
 // =============== Start our Server =======================
 // Lets start the server
-server.start(function() { //start  running server
-    console.log('Server running at:', server.info.uri);
-});
